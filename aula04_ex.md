@@ -89,6 +89,9 @@ db.pessoas.insertMany([...documentos aqui...]);
 ```
 
 ### **Exercício 1: Selecionar pessoas ativas**
+```
+db.pessoas.find({status: "active" })
+```
 
 ### **Exercício 2: Selecionar pessoas com idade maior que 30**
 
