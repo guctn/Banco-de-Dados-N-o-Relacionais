@@ -90,25 +90,59 @@ db.pessoas.insertMany([...documentos aqui...]);
 
 ### **Exercício 1: Selecionar pessoas ativas**
 ```
-db.pessoas.find({status: "active" })
+db.pessoas.find({ status: "active" })
 ```
 
 ### **Exercício 2: Selecionar pessoas com idade maior que 30**
+```
+db.pessoas.find({age: {$gt: 30}})
+```
 
 ### **Exercício 3: Selecionar pessoas cujo nome começa com "J"**
+```
+db.pessoas.find({name: { $regex: /^J/ }})
+db.pessoas.find({name: { $regex: /^j/i }})
+```
 
 ### **Exercício 4: Selecionar pessoas ativas com idade maior que 30**
+```
+db.pessoas.find({status: "active", age: {$gt: 30}})
+db.pessoas.find({$and: [{status: "active"}, {age: {$gt: 30}}]})
+```
 
 ### **Exercício 5: Selecionar pessoas cuja idade não é 28**
+```
+db.pessoas.find({age: {$ne: 28}})
+```
 
 ### **Exercício 6: Selecionar pessoas cujo email termina com "company.com"**
+```
+db.pessoas.find({email: {$regex: /company\.com$/}})
+```
 
 ### **Exercício 7: Selecionar pessoas cujo nome contém "Smith"**
+```
+db.pessoas.find({ name: { $regex: /Smith/ } })
+```
 
 ### **Exercício 8: Selecionar pessoas que têm "Pine" no endereço**
+```
+db.pessoas.find({ address: { $regex: /Pine/ } });
+```
 
 ### **Exercício 9: Selecionar pessoas com idade entre 25 e 35 anos**
+```
+db.pessoas.find({ age: { $gte: 25, $lte: 35 } });
+```
 
 ### **Exercício 10: Selecionar pessoas com status "inactive" ou idade menor que 30**
+```
+db.pessoas.find({
+  $or: [
+    { status: "inactive" },
+    { age: { $lt: 30 } }
+  ]
+});
+```
 
 
