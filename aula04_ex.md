@@ -2,7 +2,7 @@
 
 ## Coleção de Exemplo: `pessoas`
 
-A coleção `pessoas` contém documentos que incluem os campos `name`, `age`, `status`, `email`, e `address`. 
+A coleção `pessoas` contém documentos que incluem os campos `name`, `age`, `status`, `email`, `address`. 
 
 ### **Coleção:**
 
